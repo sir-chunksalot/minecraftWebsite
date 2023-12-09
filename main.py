@@ -1,7 +1,6 @@
 import aiohttp_session as sessions
 import socketio
 from aiohttp import web
-from aiohttp_session.cookie_storage import EncryptedCookieStorage
 import json
 from http.cookies import SimpleCookie
 import asyncio
