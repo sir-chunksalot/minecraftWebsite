@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+{# jinja is html with templating  #}
+<!-- html spawns all the boxes in the subspace, css styles them -->
+<html>
+    <!-- metadata  -->
+    <head>  
+        <title>{{ server_ip }}</title>
+        <link rel="stylesheet" href="/static/css/main.css"> 
+        {# rel means the type of link, in this case it is a style sheet. href is the url #}
+        <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    </head>
+    <!-- data -->
+    <body>
+        <header>
+            <!-- div is generic container -->
+            <div id="header-ip">
+                <!-- h1 is biggest h6 is smallest (heading 1)-->
+                <h1>{{ server_ip }}</h1>
+                <span id="status" class="offline"></span>
+            </div>
+            <div id="hamcorp">
+                <img src="/static/images/hamcorp.png">
+                <h5>A site by HAMCORP</h5> 
+            </div>
+        </header> 
+        <main>
+            <div id="quick-commands">
+                <div class="players">
+                    {# <div class="player">
+                        classes are like ids but they can be used multiple times
+                        <p>WWWWWWWWWWWWWWWW</p>
+                        <button title="Creative Mode" class="creative"></button>
+                        <button title="Survival Mode" class="survival"></button>
+                        <button title="Teleport" class="teleport"></button>
+                        <button title="Kick" class="kick"></button>
+                    </div> #}
+                </div>
+                <div id="gamerules">
+                    <div class="gamerule">
+                        <input type="checkbox" id="gamerule-pvp" >
+                        <img src="/static/images/diamondsword.png">
+                        <p>PVP</p>
+                    </div>
+                    <div class="gamerule">
+                        <input type="checkbox" id="gamerule-keepinventory">
+                        <img src="/static/images/chest.png">
+                        <p>Keep Inventory</p>
+                    </div>
+                    <div class="gamerule">
+                        <input type="checkbox" id="gamerule-setday">
+                        <img src="/static/images/redstonelamp.png">
+                        <p>Always Day</p>
+                    </div>
+                    <div class="gamerule">
+                        <input type="checkbox" id="gamerule-difficulty">
+                        <img src="/static/images/zombieHead.png">
+                        <p>Difficulty</p>
+                    </div>
+                    <div class="gamerule">
+
+                    </div>
+                    <div class="gamerule">
+
+                    </div>
+                    <div class="gamerule">
+                        <button id="gamerule-tpall">
+                            <img src="/static/images/woodenButton2.png">
+                        </button>
+                        <img src="/static/images/eyeOfEnder.png">
+                        <p>Warp Spawn</p>
+                    </div>
+                </div>
+            </div>
+            <div id="server">
+                <div id="console">
+                    <!-- p means paragraph text (very small) -->
+                    <div id="lines">
+                        {# <p class="line">NUTLESS was slain by TheStinkyLad</p>
+                        <p class="line">NasdfasoiyudfiahiouydfaioudfhiouafhioufdasioufdashioufdasioufdsahioufdashoiufdsahoiufdashouifadshouifhdsoiufhadoisufhdioaushfiouadshfoiduashfioudashfioudhUTLESS was slain by TheStinkyLad</p> #}
+                    </div>
+                    <form id="console-form" autocomplete="off">
+                        <input id="console-input" type="text" placeholder="Enter a console command">
+                    </form>
+                </div>
+                <div id="controls">
+                    <button id="start-server">Start Server</button>
+                    <button id="stop-server">Stop Server</button>
+                </div>
+            </div>
+        </main>
+        {# modal #}
+        {# <div class="modal">
+            <div class="dimmer"></div>
+            <div class="content">
+                <div class="players">
+                    <div class="player">
+                        <p>WWWWWWWWWWWWWWWW</p>
+                        <button title="Teleport" class="teleport"></button>
+                    </div>
+                    <div class="player">
+                        <p>WWWWWWWWWWWWWWWW</p>
+                        <button title="Teleport" class="teleport"></button>
+                    </div>
+                    <div class="player">
+                        <p>WWWWWWWWWWWWWWWW</p>
+                        <button title="Teleport" class="teleport"></button>
+                    </div>
+                </div>
+            </div>
+        </div> #}
+        <script src="/static/js/main.js"></script>
+    </body>
+</html>

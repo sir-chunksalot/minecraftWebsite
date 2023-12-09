@@ -1,0 +1,371 @@
+@font-face {
+    font-family: mcfont;
+    src: url("/static/font/MinecraftRegular-Bmg3.otf"); 
+    /* grabs our font */
+}
+
+* {
+    font-family: mcfont;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#header-ip {
+    display: flex;
+    width: 600px;
+    padding: 1rem;
+    /* rem is the font size - "relative units based on font size, not exact" */
+    border: 4px solid rgb(0, 0, 0);
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+#header-ip > h1 {
+    margin: 0;
+}
+
+#header-ip > #status {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border:solid 2px rgb(0, 0, 0);
+}
+
+#header-ip > #status.offline {
+    background-color: red;
+}
+
+#header-ip > #status.online {
+    background-color: green;
+}
+
+#hamcorp {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    text-align: center;
+}
+
+#hamcorp > h5 {
+    margin: 0;
+    color: rgb(233, 62, 210);
+    text-shadow: rgb(60, 60, 60) -1px 1px 0px, rgb(60, 60, 60) 1px 1px 0px, rgb(60, 60, 60) 1px -1px 0px, rgb(60, 60, 60) -1px -1px 0px; 
+    /* adding a text shadow on each corner of the text. its wacky just google it */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+#quick-commands {
+    display: flex;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 570px;
+    height: 325px;
+    margin-left: 10%;
+    margin-right: auto;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.players::-webkit-scrollbar {
+    display: none;
+}
+
+.player {
+    display: flex;
+}
+
+.player:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.player > p,
+.player > button {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.player > p {
+    font-size: 2rem;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.player > p::before {
+    content: ' [ ';
+}
+
+.player > p::after {
+    content: ' ] ';
+}
+
+.player > button {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: filter 0.1s linear, scale 0.1s linear;
+}
+
+.player > button:not(:last-of-type) {
+    margin-right: 1rem;
+}
+
+.player > button:hover {
+    filter: brightness(0.8);
+    scale: 1.2;
+}
+
+.player > button:active {
+    filter: brightness(0.5);
+    scale: 1.25;
+}
+
+.player > .creative {
+    background-image: url("/static/images/commandblock.gif");
+}
+
+.player > .survival {
+    background-image: url("/static/images/grassblock.PNG");
+}
+
+.player > .teleport {
+    background-image: url("/static/images/epearl.PNG");
+}
+
+.player > .kick {
+    background-image: url("/static/images/tnt.png");
+}
+
+#gamerules {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gamerule {
+    display: flex;
+}
+
+.gamerule:not(:last-of-type) {
+    margin-bottom: .85rem;
+}
+
+.gamerule > input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.gamerule > img {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+    margin-right: .7rem ;
+
+}
+
+.gamerule > button {
+    height: 20.39px;
+    width: 30.47px;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* .player > button:hover {
+    filter: brightness(0.8);
+    scale: 1.2;
+}
+
+.player > button:active {
+    filter: brightness(0.5);
+    scale: 1.25;
+} */
+
+.gamerule > button:hover {
+    filter: brightness(.8);
+}
+
+.gamerule > button:active {
+    filter: brightness(0.6);
+}
+
+.gamerule > button > img {
+    height: 100%;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+.gamerule > p {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#server {
+    display: flex;
+    margin-left: 10%;
+    flex: 1;
+}
+
+#console {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-right: 4rem;
+    margin-top: 5rem;
+    overflow-y: hidden;
+    flex-grow: 0;
+}
+
+#lines {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid black;
+    border-radius: 0.25rem;
+    padding: .5rem;
+    height: 300px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.line {
+    font-size: 1.25rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin: 0;
+}
+
+.line:nth-of-type(even) {
+    background-color: lightgray;
+}
+
+#console form, #console input {
+    width: 100%;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+}
+
+#controls {
+    display: flex;  
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#controls > button {
+    width: 200px;
+    height: 80px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.9rem;
+    color: white;
+    outline: none;
+    border: 0px solid transparent;
+    border-radius: 0.5rem;
+    transition: filter 0.1s linear, scale 0.1s linear;
+}
+
+#controls > button#start-server {
+    background-color: rgb(4, 104, 4);
+}
+
+#controls > button#stop-server {
+    background-color: rgb(121, 11, 11);
+}
+
+#controls > button:hover {
+    filter: brightness(0.8);
+    scale: 1.05;
+}
+
+#controls > button:active {
+    filter: brightness(0.5);
+    scale: 1.08;
+}
+
+.modal {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    z-index: 69;
+    position: absolute;
+    overflow: hidden;
+}
+
+.modal.close > .content {
+    transition: translate .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    translate: 0 190%;
+    /* opacity: 0; */
+}
+
+.modal > .dimmer {
+    background-color: black;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.modal > .content {
+    width: 30%;
+    height: 400px;
+    margin: auto;
+    background-color: white;
+    border-radius: 1rem;
+    overflow-y: auto;
+}
+
+.modal > .content > .players {
+    width: initial;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+}

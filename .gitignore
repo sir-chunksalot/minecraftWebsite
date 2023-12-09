@@ -1,0 +1,10 @@
+/server/cache
+/server/config
+/server/debug
+/server/libraries
+/server/logs
+/server/world
+/server/world_nether
+/server/versions
+/server/world_the_end
+/server/banned-ips.json
